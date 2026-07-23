@@ -1,0 +1,251 @@
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root,
+[data-theme="midnight"] {
+  /* Midnight Command Glass (Dark Default) */
+  --bg-primary: #060910;
+  --bg-secondary: #0c111d;
+  --bg-card: rgba(15, 22, 36, 0.75);
+  --bg-card-hover: rgba(22, 32, 54, 0.88);
+  --bg-card-solid: #0d1424;
+  
+  --border-glass: rgba(0, 113, 227, 0.15);
+  --border-glass-bright: rgba(0, 113, 227, 0.35);
+  --border-glass-glow: linear-gradient(135deg, rgba(0, 113, 227, 0.4), rgba(52, 199, 89, 0.3));
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --apple-blue: #0071e3;
+  --apple-blue-light: #2997ff;
+  --apple-green: #34c759;
+  --apple-amber: #ff9500;
+  --apple-red: #ff3b30;
+  --apple-purple: #af52de;
+
+  --shadow-glass: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] {
+  /* White & Cobalt Blue Command Glass (Light Theme) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f7fb;
+  --bg-card: rgba(248, 250, 252, 0.92);
+  --bg-card-hover: #ffffff;
+  --bg-card-solid: #ffffff;
+  
+  --border-glass: rgba(0, 82, 204, 0.15);
+  --border-glass-bright: rgba(0, 82, 204, 0.3);
+  --border-glass-glow: linear-gradient(135deg, rgba(0, 82, 204, 0.35), rgba(5, 150, 105, 0.25));
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --apple-blue: #0052cc;
+  --apple-blue-light: #0066cc;
+  --apple-green: #059669;
+  --apple-amber: #d97706;
+  --apple-red: #dc2626;
+  --apple-purple: #7c3aed;
+
+  --shadow-glass: 0 6px 24px 0 rgba(0, 82, 204, 0.09);
+}
+
+[data-theme="ocean"] {
+  /* Ocean Deep Command Glass */
+  --bg-primary: #051020;
+  --bg-secondary: #0b1a33;
+  --bg-card: rgba(11, 26, 51, 0.8);
+  --bg-card-hover: rgba(18, 40, 77, 0.9);
+  --bg-card-solid: #0b1a33;
+  
+  --border-glass: rgba(0, 210, 255, 0.2);
+  --border-glass-bright: rgba(0, 210, 255, 0.4);
+  --border-glass-glow: linear-gradient(135deg, rgba(0, 210, 255, 0.5), rgba(100, 255, 218, 0.3));
+
+  --text-primary: #e6f1ff;
+  --text-secondary: #8892b0;
+  --text-muted: #495670;
+
+  --apple-blue: #00d2ff;
+  --apple-blue-light: #64ffda;
+  --apple-green: #64ffda;
+  --apple-amber: #ffd166;
+  --apple-red: #ff5376;
+  --apple-purple: #c792ea;
+
+  --shadow-glass: 0 10px 36px 0 rgba(0, 10, 25, 0.6);
+}
+
+[data-theme="emerald"] {
+  /* Emerald River Command Glass */
+  --bg-primary: #04120e;
+  --bg-secondary: #081d17;
+  --bg-card: rgba(8, 29, 23, 0.8);
+  --bg-card-hover: rgba(14, 45, 36, 0.9);
+  --bg-card-solid: #081d17;
+  
+  --border-glass: rgba(52, 211, 153, 0.2);
+  --border-glass-bright: rgba(52, 211, 153, 0.4);
+  --border-glass-glow: linear-gradient(135deg, rgba(52, 211, 153, 0.5), rgba(16, 185, 129, 0.3));
+
+  --text-primary: #ecfdf5;
+  --text-secondary: #9ca3af;
+  --text-muted: #4b5563;
+
+  --apple-blue: #10b981;
+  --apple-blue-light: #34d399;
+  --apple-green: #10b981;
+  --apple-amber: #f59e0b;
+  --apple-red: #ef4444;
+  --apple-purple: #8b5cf6;
+
+  --shadow-glass: 0 10px 36px 0 rgba(0, 20, 15, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, button, input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+.mono-val, .telemetry-font {
+  font-family: var(--font-mono) !important;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Rivertech Command Glass System */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border: 1px solid var(--border-glass);
+  border-radius: 20px;
+  box-shadow: var(--shadow-glass);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border-glass-glow);
+  opacity: 0.7;
+}
+
+.glass-card:hover {
+  border-color: var(--border-glass-bright);
+}
+
+.glass-card-interactive:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-glass-bright);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 113, 227, 0.15);
+}
+
+.glass-pill {
+  background: rgba(125, 125, 125, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glass-bright);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.glass-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-card);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border-bottom: 1px solid var(--border-glass-bright);
+  transition: background 0.3s ease;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading) !important;
+  letter-spacing: -0.025em;
+}
+
+/* Radar Pulse Animations for Nautical Identity */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.status-dot.active {
+  background-color: var(--apple-green);
+  box-shadow: 0 0 10px rgba(52, 199, 89, 0.7);
+  animation: radar-pulse 2s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.status-dot.inactive {
+  background-color: var(--text-muted);
+}
+
+@keyframes radar-pulse {
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.8); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(52, 199, 89, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(52, 199, 89, 0); }
+}
+
+/* Slide-out Drawer Animation */
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.drawer-slide-in {
+  animation: slide-in-left 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-glass-bright);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--apple-blue);
+}

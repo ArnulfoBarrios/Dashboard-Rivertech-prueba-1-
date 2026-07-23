@@ -127,13 +127,7 @@ export const NavalFleetDashboard: React.FC<NavalFleetDashboardProps> = ({
       </div>
 
       {/* Main Grid: Compact Searchable Combobox & Details + Depth Profile Chart */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '20px',
-        }}
-      >
+      <div className="responsive-grid-split">
         {/* Compact Searchable Vessel Dropdown Inspector */}
         <div className="glass-card" style={{ padding: '24px' }}>
           <div style={{ marginBottom: '16px' }}>

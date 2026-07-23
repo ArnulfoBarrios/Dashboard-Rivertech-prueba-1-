@@ -71,14 +71,7 @@ export const ControlTowerDashboard: React.FC<ControlTowerDashboardProps> = ({
       </div>
 
       {/* Main OpenFreeMap 3D + Sidebar Grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 340px',
-          gap: '20px',
-          minHeight: '580px',
-        }}
-      >
+      <div className="responsive-map-split">
         {/* OpenFreeMap 3D Vector View */}
         <div className="glass-card" style={{ padding: 0, position: 'relative' }}>
           <OpenFreeMap3D

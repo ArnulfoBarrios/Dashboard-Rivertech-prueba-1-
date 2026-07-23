@@ -86,13 +86,7 @@ export const EngineHealthDashboard: React.FC<EngineHealthDashboardProps> = ({
       </div>
 
       {/* Main Charts Grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '20px',
-        }}
-      >
+      <div className="responsive-grid-split">
         {/* Coolant Temp Chart (ECT1, ECT2, ECT3) */}
         <div className="glass-card" style={{ padding: '24px' }}>
           <div style={{ marginBottom: '18px' }}>

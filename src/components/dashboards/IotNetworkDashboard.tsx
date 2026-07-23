@@ -84,13 +84,7 @@ export const IotNetworkDashboard: React.FC<IotNetworkDashboardProps> = ({
       </div>
 
       {/* Main Grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '20px',
-        }}
-      >
+      <div className="responsive-grid-split">
         {/* Satellite Count & HDOP Precision Chart */}
         <div className="glass-card" style={{ padding: '24px' }}>
           <div style={{ marginBottom: '18px' }}>
